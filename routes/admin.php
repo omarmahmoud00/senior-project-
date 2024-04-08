@@ -30,5 +30,6 @@ Route::middleware('auth:is_BusinessUser')->group(function () {
     Route::get('all/event/Reservation',[EventController::class,'index'])->name('event.index');
     Route::get('create/event/Reservation',[EventController::class,'create'])->name('event.create');
     Route::post('insert/event/Reservation',[EventController::class,'insert'])->name('event.insert');
+    Route::post('dekete/event/Reservation/{id}',[EventController::class,'delete'])->name('event.delete');
 });
 
