@@ -1,0 +1,208 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: #376c8b;  
+    color: white;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #0d417c;  
+  }
+  
+  header {
+    background: #376c8b; 
+    color: white;
+    padding: 1em 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+  }
+  
+  nav .logo {
+    font-size: 1.5em;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 1em;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+  }
+  
+  nav ul li a:hover {
+    background-color: #376c8b; 
+  }
+  
+  main {
+    padding-top: 60px; 
+    padding: 2em;
+    text-align: center;
+    color: white;
+  }
+  
+  main .intro h1 {
+    margin-bottom: 0.5em;
+  }
+  
+  main .intro p {
+    font-size: 1.2em;
+  }
+  
+  footer {
+    background: #376c8b;  
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: absolute;
+    bottom:  0;
+    width: 100%;
+  }
+  .content {
+    flex: 1; /* This will make the content expand to fill available space, pushing the footer down */
+  }
+  /* Additions to your existing CSS */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #252547; /* Match the header background */
+  color: white;
+  padding: 0 2em;
+  position: fixed; /* Ensure navbar is fixed if needed */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar links */
+.navbar a, .dropdown .dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 1em; /* Match the padding of your current nav links */
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block; /* Necessary for positioning the dropdown content */
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  background-color: inherit; /* Match navbar background */
+  border: none; /* Remove borders */
+  font-family: Arial, sans-serif; /* Use the same font for consistency */
+  margin: 0; /* Remove margins */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9; /* Light background for the dropdown */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for dropdown */
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Ensure it takes up the full width */
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the dropdown items on hover */
+.dropdown-content a:hover {
+  background-color: #376c8b; /* Match the hover effect of other nav links */
+}
+
+@media (max-width: 768px) {
+  header, .navbar {
+    padding: 0.5em 0; /* Reduced padding */
+  }
+  body, html {
+      font-size: 16px; /* Adjust base font size */
+  }
+
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+  }
+
+  nav ul li {
+      margin: 0.5em 0; /* Adjust margin for vertical layout */
+  }
+  nav .logo, nav ul li a {
+    font-size: 1em; /* Smaller font size */
+  }
+  nav, .navbar {
+      flex-direction: column;
+      padding: 1em 0; /* Reduce padding */
+  }
+
+  main {
+      padding: 9em; /* Adjust main content padding */
+  }
+
+  footer {
+      position: relative; /* Adjust footer position */
+  }
+}
+
+/* Additional Media Queries for smaller devices */
+@media (max-width: 480px) {
+  header, .navbar {
+    padding: 0.25em 0; /* Even smaller padding for very small screens */
+  }
+
+  nav .logo, nav ul li a {
+    font-size: 0.75em; /* Even smaller font size for very small screens */
+  }
+
+  nav ul li a {
+    padding: 0.5em; /* Adjust link padding */
+  }
+
+  /* Adjustments for main content to not be hidden behind the header */
+  main {
+    padding-top: 3.5em; /* This might need to be adjusted based on the final header size */
+    padding: 1em;
+  }
+
+  /* Ensure footer does not overlap with content */
+  footer {
+    position: relative;
+  }
+}

@@ -1,0 +1,212 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d417c;
+  font-family: "Libre Baskerville", serif;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  background: #EDDDD4;
+  color: #283D3B;
+  width: 350px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift card up on hover */
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.3); /* Enhanced shadow on hover */
+}
+
+.card h2 {
+  margin: 0;
+  width: 100%;
+  font-size: 34px; /* Increased font size */
+  background: #C44536;
+  padding: 25px 0; /* Adjusted padding */
+  color: #EDDDD4;
+  box-shadow: inset 0px 5px 4px -4px #ecddd461;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+.card h3 {
+  margin: 20px 0;
+  font-size: 70px; /* Increased font size */
+  text-shadow: 3px 2px 2px #283d3b38;
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+.card h3 span {
+  font-size: 24px; /* Increased font size */
+}
+
+.card p {
+  font-style: italic;
+  margin: 0 0 30px 0;
+  font-size: 18px; /* Increased font size */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+.card ul {
+  text-align: left;
+  padding: 0 50px;
+  margin: 0;
+}
+
+.card ul li {
+  display: block;
+  font-size: 16px; /* Increased font size */
+  margin-bottom: 15px; /* Increased spacing for readability */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+.card .select {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 15px 25px; /* Adjusted padding for larger text */
+  border: none;
+  font-weight: 700;
+  background: #3e3e3e;
+  color: #efefef;
+  font-size: 18px; /* Increased font size */
+  box-shadow: 0 8px 18px 4px #283d3b4d;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Added transition for interactive button */
+}
+
+.card .select:hover {
+  background-color: #197278; /* Change button background color on hover */
+  color: #ffffff; /* Change button text color on hover */
+}
+
+.card-1, .card-3 {
+  position: relative;
+  transform: scale(0.9);
+}
+
+.card-1 {
+  left: 40px;
+  margin-left: -60px;
+  z-index: 0;
+}
+
+.card-1 h2 {
+  background: #197278;
+}
+
+.card-2 {
+  z-index: 1;
+}
+
+.card-3 {
+  left: -40px;
+  margin-right: -60px;
+  z-index: 0;
+}
+
+.card-3 h2 {
+  background: #781940;
+}
+
+.hot-badge::after {
+  content: "HOT";
+  position: absolute;
+  background: linear-gradient(to right, #ffd400, #ffbc00);
+  padding: 5px 54px;
+  box-shadow: 0 0 5px 3px #715e006e;
+  top: 17px;
+  right: -46px;
+  color: #5d4d00;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  transform: rotateZ(45deg);
+}
+
+.creator-link:link, .creator-link:visited {
+  text-decoration: none;
+  color: #d8d8d8;
+  background: #2d2d2d;
+  text-shadow: 0 1px 3px black;
+  position: fixed;
+  bottom: 40px;
+  right: -54px;
+  padding: 5px 0px;
+  margin: 0 auto;
+  width: 230px;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  margin-top: 50px;
+  transform: rotateZ(-45deg);
+  z-index: 10;
+  transition: 150ms;
+}
+
+.creator-link:hover {
+  background: #56251f;
+  color: white;
+}
+
+.edit-button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Mouse pointer changes to a hand icon */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.edit-button:hover {
+  background-color: #45a049; /* Darker shade of green on hover */
+  transform: scale(1.05); /* Slightly increase the button size on hover */
+}
+
+.edit-button:focus {
+  outline: none; /* Removes the outline on focus for cleaner look */
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for a focused effect */
+}
+ 
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    white-space: normal;
+  }
+
+  .card {
+    display: block; /* Stack cards vertically */
+    width: 80%; /* Adjust width to be responsive */
+    margin: 20px auto; /* Center cards within the container */
+  }
+
+  .card h2, .card h3, .card p, .card ul li, .card .select {
+    font-size: 90%; /* Slightly reduce font size */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 95%; /* Allow more space for the card on very small screens */
+  }
+
+  .card h2, .card h3, .card p, .card ul li, .card .select {
+    font-size: 80%; /* Further reduce font size for readability */
+  }
+}
