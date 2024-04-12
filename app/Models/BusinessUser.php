@@ -18,15 +18,23 @@ class BusinessUser  extends Authenticatable
     protected $fillable = ['business_name', 'email', 'password', 'business_type', 'phone_number', 'address'];
 
       
-      public function subscribes()
-            {
-                return $this->hasMany(Subscribe::class);
-            }
+     // Returns all subscriptions associated with the business user
+    public function subscribes()
+    {
+        return $this->hasMany(Subscribe::class);
+    }
 
-            public function eventReservations()
-            {
-                return $this->hasMany(EventReservation::class);
-            }
+    // Returns all event reservations made by the business user
+    public function eventReservations()
+    {
+        return $this->hasMany(EventReservation::class);
+    }
+    
+    // Returns all event user reservations linked to the business user
+    public function eventUserReservation()
+    {
+        return $this->hasMany(EventUserReservation::class);
+    }
 
     //  public function store(Request $request){
     //             $user = new BusinessUser();
