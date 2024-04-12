@@ -16,5 +16,11 @@ class EventReservation extends Model
     {
         return $this->belongsTo(BusinessUser::class);
     }
+    
+    public function eventUserReservation()
+    {
+        return $this->hasMany(EventUserReservation::class);
+    }
+
 }
 
