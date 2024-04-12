@@ -25,11 +25,16 @@ Route::post('/admin/logout', [AdminController::class, 'destroy'])
 ->name('admin.logout');
 
 // Route::get('/admin/login',[AdminController::class,'loginAdmin']);
+
 Route::middleware('auth:is_BusinessUser')->group(function () {
    
     Route::get('all/event/Reservation',[EventController::class,'index'])->name('event.index');
     Route::get('create/event/Reservation',[EventController::class,'create'])->name('event.create');
     Route::post('insert/event/Reservation',[EventController::class,'insert'])->name('event.insert');
-    Route::post('dekete/event/Reservation/{id}',[EventController::class,'delete'])->name('event.delete');
+    
+    Route::get('update/event/Reservation/{id}',[EventController::class,'update'])->name('event.update');
+    Route::post('edit/event/Reservation',[EventController::class,'edit'])->name('event.edit');
+
+    Route::delete('delete/event/Reservation/{id}',[EventController::class,'delete'])->name('event.delete');
 });
 
