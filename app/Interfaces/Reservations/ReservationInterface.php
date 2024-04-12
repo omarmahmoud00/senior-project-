@@ -2,11 +2,18 @@
 
 namespace App\Interfaces\Reservations;
 
-interface ReservationInterface{
+interface ReservationInterface {
 
-    // main operations that will be in every sector .
+    // Create a new reservation
     public function create();
+
+    // Update an existing reservation
     public function update();
-    public function delete();
+
+    // Delete a reservation by its ID
+    public function delete($id);
+
+    // Retrieve all reservations
     public function get_all();
+
 }
