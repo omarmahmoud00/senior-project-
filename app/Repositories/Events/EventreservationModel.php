@@ -30,6 +30,30 @@ class EventreservationModel{
       }
   }
 
+
+  public function update_record($id, $data) : bool
+    {
+        try {
+            $event = EventReservation::findOrFail($id); // Ensure the event exists
+            
+            $event->update([
+                'event_name' => $data['Event_Name'],
+                'number_of_tickets' => $data['Number_Of_Tickets'],
+                'price' => $data['price'], 
+                'start_date' => $data['start_date'],
+                'end_date' => $data['End_date']
+            ]);
+
+            return true;
+
+        } catch (Exception $e) {
+            throw $e; // It's a good practice to rethrow the exception to let the caller handle it
+        }
+    }
+
+
+
+
 }
 
 
