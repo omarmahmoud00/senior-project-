@@ -1,7 +1,7 @@
 @extends('adminDashboardLayouts.master')
 
 @section('title')
-  Admin Dashboard
+  Create Dashboard
 @endsection
 
 @section('content') 
